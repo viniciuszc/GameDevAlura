@@ -1,0 +1,24 @@
+{
+  "name": "gamedevalura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciuszc/GameDevAlura.git"
+  },
+  "author": "Vinicius Zonaro Chimello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniciuszc/GameDevAlura/issues"
+  },
+  "homepage": "https://github.com/viniciuszc/GameDevAlura#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "p5": "^1.0.0",
+    "socket.io": "^2.3.0"
+  }
+}
