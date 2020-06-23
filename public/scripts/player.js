@@ -1,51 +1,50 @@
-//import 'global.js';
 
-class Player{
-  
-  constructor(image, speed){
+class Player {
+
+  constructor(image, speed) {
     this.image = image;
-    this.spriteWalk = this.packSprite(220,270, 4, 4);
+    this.spriteWalk = this.packSprite(220, 270, 4, 4);
     this.iFrame = 0;
-    this.time = 0;
+    this.timeCount = 0;
     this.speed = speed;
   }
 
-  show(){
+  show() {
     image(
       this.image,
-      0,
-      height - 145,
-      110, 
-      135,
+      40,
+      height - 280 * 0.7,
+      220 * 0.7,
+      270 * 0.7,
       this.spriteWalk[this.iFrame][0],
       this.spriteWalk[this.iFrame][1],
-      220, 
+      220,
       270
     );
 
     this.walk();
   }
 
-  walk(){
-    this.time++;
-    if(this.time >= this.speed){
-      this.time = 0;
+  walk() {
+    this.timeCount++;
+    if (this.timeCount >= this.speed) {
+      this.timeCount = 0;
       this.iFrame++;
-      if(this.iFrame >= this.spriteWalk.length - 1){
+      if (this.iFrame >= this.spriteWalk.length - 1) {
         this.iFrame = 0;
       }
     }
   }
 
-  packSprite(width, height, xLength, yLength){
+  packSprite(width, height, xLength, yLength) {
     var arraySprite = [];
-    for(var x = 0, w = 0, h = 0; x < xLength; x++){
-      for(var y = 0; y < yLength; y++){
-        arraySprite.push([w,h]);
-        h = h + height;
+    for (var y = 0, w = 0, h = 0; y < yLength; y++) {
+      for (var x = 0; x < xLength; x++) {
+        arraySprite.push([w, h]);
+        w = w + width;
       }
-      w = w + width;
-      h = 0;
+      h = h + height;
+      w = 0;
     }
     return arraySprite;
   }
